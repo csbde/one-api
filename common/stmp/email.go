@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"one-api/common"
 	"strings"
+	"crypto/tls"
 
 	"github.com/wneessen/go-mail"
 )
@@ -37,20 +38,26 @@ func (s *StmpConfig) Send(to, subject, body string) error {
 	message.Subject(subject)
 	message.SetGenHeader("References", s.getReferences())
 	message.SetBodyString(mail.TypeTextHTML, body)
-	message.SetUserAgent(fmt.Sprintf("One API %s // https://github.com/MartialBE/one-api", common.Version))
-
+	message.SetUserAgent("Apple-Mail/3654.120.0")
+	// 自定义TLS配置以忽略证书检查
+	tlsConfig := &tls.Config{
+		InsecureSkipVerify: true,
+	}
 	client, err := mail.NewClient(
 		s.Host,
 		mail.WithPort(s.Port),
 		mail.WithUsername(s.Username),
 		mail.WithPassword(s.Password),
 		mail.WithSMTPAuth(mail.SMTPAuthPlain))
+		mail.WithTLSConfig(tlsConfig), // 传递自定义TLS配置
 
 	if err != nil {
 		return err
 	}
 
 	switch s.Port {
+	case 25:
+		client.SetTLSPolicy(mail.NoTLS)
 	case 465:
 		client.SetSSL(true)
 	case 587:
