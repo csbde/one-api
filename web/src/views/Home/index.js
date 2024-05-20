@@ -61,11 +61,19 @@ const Home = () => {
       ) : (
         <>
           <Box>
+            
             {homePageContent.startsWith('https://') ? (
               <iframe title="home_page_content" src={homePageContent} style={{ width: '100%', height: '100vh', border: 'none' }} />
             ) : (
               <>
-                <Container maxWidth="lg">
+                <Container maxWidth="lg"
+                    sx={{
+                      minHeight: 'calc(100vh - 136px)',
+                      backgroundImage: 'linear-gradient(to right, #ff9966, #ff5e62)',
+                      color: 'white',
+                      p: 4
+                    }}
+                >
                 <Grid container columns={12} wrap="nowrap" alignItems="center" sx={{ minHeight: 'calc(100vh - 230px)' }}>
                   <Grid md={7} lg={6}>
                   <Stack spacing={3}>
