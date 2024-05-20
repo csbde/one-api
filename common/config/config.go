@@ -4,9 +4,9 @@ import (
 	"strings"
 	"time"
 
+	"github.com/joho/godotenv"
 	"one-api/cli"
 	"one-api/common"
-	"github.com/joho/godotenv"
 
 	"github.com/spf13/viper"
 )

@@ -65,8 +65,14 @@ const Home = () => {
               <iframe title="home_page_content" src={homePageContent} style={{ width: '100%', height: '100vh', border: 'none' }} />
             ) : (
               <>
-                <Container>
+                <Container maxWidth="lg">
+                <Grid container columns={12} wrap="nowrap" alignItems="center" sx={{ minHeight: 'calc(100vh - 230px)' }}>
+                  <Grid md={7} lg={6}>
+                  <Stack spacing={3}>
                   <div style={{ fontSize: 'larger' }} dangerouslySetInnerHTML={{ __html: homePageContent }}></div>
+                  </Stack>
+                 </Grid>
+                 </Grid>
                 </Container>
               </>
             )}
