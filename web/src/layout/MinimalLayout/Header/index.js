@@ -76,7 +76,7 @@ const Header = () => {
             </Button>
             {account.user && (
               <Button component={Link} variant="text" to="/playground" color={pathname === '/playground' ? 'primary' : 'inherit'}>
-                Playground
+                开始聊天
               </Button>
             )}
             <Button component={Link} variant="text" to="/about" color={pathname === '/about' ? 'primary' : 'inherit'}>

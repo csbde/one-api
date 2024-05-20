@@ -6,11 +6,16 @@ import (
 
 	"one-api/cli"
 	"one-api/common"
+	"github.com/joho/godotenv"
 
 	"github.com/spf13/viper"
 )
 
 func InitConf() {
+	err := godotenv.Load()
+	if err != nil {
+		common.SysLog("Error loading .env file")
+	}
 	cli.FlagConfig()
 	defaultConfig()
 	setConfigFile()

@@ -79,7 +79,7 @@ const panel = {
     },
     {
       id: 'playground',
-      title: 'Playground',
+      title: '开始聊天',
       type: 'item',
       url: '/panel/playground',
       icon: icons.IconBallFootball,
