@@ -48,7 +48,7 @@ func (s *StmpConfig) Send(to, subject, body string) error {
 		mail.WithPort(s.Port),
 		mail.WithUsername(s.Username),
 		mail.WithPassword(s.Password),
-		mail.WithSMTPAuth(mail.SMTPAuthPlain))
+		mail.WithSMTPAuth(mail.SMTPAuthPlain)),
 		mail.WithTLSConfig(tlsConfig), // 传递自定义TLS配置
 
 	if err != nil {
