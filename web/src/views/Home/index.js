@@ -3,7 +3,8 @@ import { showError, showNotice } from 'utils/common';
 import { API } from 'utils/api';
 import { marked } from 'marked';
 import BaseIndex from './baseIndex';
-import { Box, Container } from '@mui/material';
+import { Box,   Container, Stack } from '@mui/material';
+import Grid from '@mui/material/Unstable_Grid2';
 
 const Home = () => {
   const [homePageContentLoaded, setHomePageContentLoaded] = useState(false);
