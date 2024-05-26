@@ -14,7 +14,7 @@ const MinimalLayout = () => {
       <CssBaseline />
       <AppBar
         enableColorOnDark
-        position="fixed"
+        position="relative"
         color="inherit"
         elevation={0}
         sx={{
@@ -28,7 +28,7 @@ const MinimalLayout = () => {
           </Toolbar>
         </Container>
       </AppBar>
-      <Box sx={{ flex: '1 1 auto', overflow: 'auto' }} marginTop={'80px'}>
+      <Box sx={{ flex: '1 1 auto', overflow: 'auto' }} marginTop={'5px'}>
         <Outlet />
       </Box>
       <Box sx={{ flex: 'none' }}>

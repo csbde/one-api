@@ -141,7 +141,7 @@ const Header = () => {
 
                     {account.user && (
                       <ListItemButton component={Link} variant="text" to="/playground">
-                        <ListItemText primary={<Typography variant="body2">Playground</Typography>} />
+                        <ListItemText primary={<Typography variant="body2">开始聊天</Typography>} />
                       </ListItemButton>
                     )}
 
